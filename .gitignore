@@ -1,0 +1,8 @@
+__pycache__/
+.venv/
+.pytest_cache/
+.idea/
+.env
+*.log
+tmp/
+.firecrawl/
