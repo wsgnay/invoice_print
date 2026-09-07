@@ -12,6 +12,8 @@ powershell -ExecutionPolicy Bypass -File .\start.ps1
 
 首次运行会创建 `.venv` 并安装依赖。本机访问 http://127.0.0.1:8765；启动窗口还会显示局域网访问地址。关闭启动终端即可停止服务。
 
+公网部署请参考 [DEPLOY.md](DEPLOY.md)，项目已包含 Docker、Caddy 自动 HTTPS 和健康检查配置。
+
 也可以手动安装与启动：
 
 ```powershell
