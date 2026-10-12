@@ -1,4 +1,4 @@
-"""Paperdesk: local, stateless document utilities."""
+"""wsgnay: stateless document utilities."""
 import base64
 import io
 import json
@@ -18,7 +18,7 @@ from starlette.concurrency import run_in_threadpool
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 from invoice_amount import amount_from_text, recognize_amount
 
-app = FastAPI(title="纸间 Paperdesk")
+app = FastAPI(title="wsgnay 工作台")
 allowed_hosts = [host.strip() for host in os.getenv("ALLOWED_HOSTS", "*").split(",") if host.strip()]
 app.add_middleware(TrustedHostMiddleware, allowed_hosts=allowed_hosts)
 MAX_BYTES = 50 * 1024 * 1024
@@ -169,7 +169,7 @@ async def export(files: list[UploadFile] = File(...), spec: str = Form(...)):
                             single.insert_pdf(result, from_page=i, to_page=i)
                             archive.writestr(f"page-{i+1:03}.pdf", pdf_bytes(single))
                 return download(buffer.getvalue(), "split-pages.zip", "application/zip")
-            return download(pdf_bytes(result), "paperdesk.pdf", "application/pdf")
+            return download(pdf_bytes(result), "wsgnay.pdf", "application/pdf")
     except (ValueError, KeyError, IndexError, TypeError, RuntimeError) as exc:
         raise HTTPException(400, str(exc)) from exc
     except Exception as exc:

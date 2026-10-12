@@ -34,7 +34,7 @@ server {
     add_header Referrer-Policy no-referrer always;
 
     location / {
-        auth_basic "Paperdesk";
+        auth_basic "wsgnay 工作台";
         auth_basic_user_file /etc/nginx/.paperdesk.htpasswd;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;

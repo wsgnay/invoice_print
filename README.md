@@ -1,4 +1,4 @@
-# 纸间 Paperdesk
+# wsgnay 工作台
 
 本机运行的中文文档工具 MVP。Python + FastAPI 提供处理服务，前端无需构建。
 

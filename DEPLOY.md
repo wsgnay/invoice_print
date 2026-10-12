@@ -1,4 +1,4 @@
-# 纸间公网部署
+# wsgnay 工作台公网部署
 
 推荐把工具部署到 `pdf.wsgnay.cn`，保留 `wsgnay.cn` 当前的根域名解析。应用、OCR 和 PDF 处理运行在服务器内；Caddy 负责 HTTPS 和反向代理。
 

@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>纸间 Paperdesk · 文档工作台</title><link rel="stylesheet" href="/style.css?v=0.3.3"></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>wsgnay 工作台 · 文档工具</title><link rel="stylesheet" href="/style.css?v=0.3.3"></head>
 <body>
 <aside class="sidebar">
- <a class="brand" href="/"><span class="brand-icon">▱</span><strong>纸间<span>PAPERDESK</span></strong></a>
+ <a class="brand" href="/"><span class="brand-icon">▱</span><strong>wsgnay<span>WORKSPACE</span></strong></a>
  <div class="nav-label">文档工作台</div>
  <nav aria-label="工具"><button data-mode="invoice" class="active"><span>▤</span>发票整理<small>01</small></button><button data-mode="pdf"><span>▧</span>PDF 工具<small>02</small></button><button data-mode="image"><span>▨</span>图片转 PDF<small>03</small></button><button data-mode="word"><span>▥</span>PDF 转 Word<small>04</small></button></nav>
- <div class="side-bottom"><span class="local-dot"></span>本机处理 · 文件不留存<p>把琐碎的文档工作，<br>留在这里。</p><span class="version">PAPERDESK / MVP 0.1</span></div>
+ <div class="side-bottom"><span class="local-dot"></span>临时处理 · 文件不留存<p>把琐碎的文档工作，<br>留在这里。</p><span class="version">WSGNAY / MVP 0.1</span></div>
 </aside>
-<div class="shell"><header><div>工作空间 <span>/</span> <b id="breadcrumb">发票整理</b></div><span class="local"><i></i> 本地工作台</span></header>
+<div class="shell"><header><div>工作空间 <span>/</span> <b id="breadcrumb">发票整理</b></div><span class="local"><i></i> 文档工作台</span></header>
 <main>
  <div class="heading"><div><div class="eyebrow">YOUR EVERYDAY DOCUMENT STUDIO</div><h1 id="title">发票整理<span>，一页搞定。</span></h1><p id="subtitle">批量导入发票，自动提取含税金额、汇总与排版打印。</p></div><button id="help" class="quiet">使用说明 ↗</button></div>
  <div class="workspace">
@@ -39,9 +39,9 @@
    <div class="export-meta"><span id="selected-count">已选择 0 页</span><span id="output-count">预计 0 张 A4</span></div><button id="export" class="primary export" disabled>↓ 导出打印 PDF</button><p class="export-tip" id="export-tip">等比缩放，保持原始发票比例</p>
   </aside>
  </div>
- <footer><span>纸间 <b>·</b> 让文档井井有条</span><span>简单处理，从容收工。</span></footer>
+ <footer><span>wsgnay 工作台 <b>·</b> 让文档井井有条</span><span>简单处理，从容收工。</span></footer>
 </main></div>
 <div id="toast" role="status" aria-live="polite"></div>
-<dialog id="help-dialog"><h2>使用说明</h2><p>1. 选择左侧工具，拖入或选择文件。</p><p>2. 勾选需要的页面，用 ↑ ↓ 调整顺序。不同工具的文件清单独立保存。</p><p>3. 发票按每页一张自动提取含税总额；图片和扫描件自动使用本机 OCR 识别。识别失败可点击“重新识别金额”，或通过“校对”修正；重新识别会保留已手动校对的金额。当前按人民币汇总，不进行币种换算。</p><p>4. PDF 工具可合并多个文件、按页码提取或逐页拆分。</p><p>5. 导出 PDF 后，用阅读器以“实际大小”打印。PDF 转 Word 仅提供基础文字提取，扫描页保留为图片。</p><p>单文件不超过 50 MB / 200 页，每次导出合计不超过 150 MB / 200 页。加密 PDF 需先解密。</p><button class="primary" id="close-help">知道了</button></dialog>
-<script src="/app.js?v=0.3.3"></script>
+<dialog id="help-dialog"><h2>使用说明</h2><p>1. 选择左侧工具，拖入或选择文件。</p><p>2. 勾选需要的页面，用 ↑ ↓ 调整顺序。不同工具的文件清单独立保存。</p><p>3. 发票按每页一张自动提取含税总额；图片和扫描件自动使用 OCR 识别。识别失败可点击“重新识别金额”，或通过“校对”修正；重新识别会保留已手动校对的金额。当前按人民币汇总，不进行币种换算。</p><p>4. PDF 工具可合并多个文件、按页码提取或逐页拆分。</p><p>5. 导出 PDF 后，用阅读器以“实际大小”打印。PDF 转 Word 仅提供基础文字提取，扫描页保留为图片。</p><p>单文件不超过 50 MB / 200 页，每次导出合计不超过 150 MB / 200 页。加密 PDF 需先解密。</p><button class="primary" id="close-help">知道了</button></dialog>
+<script src="/app.js?v=0.3.4"></script>
 </body></html>
