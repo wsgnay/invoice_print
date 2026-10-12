@@ -1,0 +1,24 @@
+[Unit]
+Description=Paperdesk document service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=paperdesk
+Group=paperdesk
+WorkingDirectory=/opt/paperdesk
+Environment=HOME=/var/lib/paperdesk
+Environment=ALLOWED_HOSTS=pdf.wsgnay.cn,127.0.0.1,localhost
+ExecStart=/opt/paperdesk/.venv/bin/uvicorn app:app --host 127.0.0.1 --port 8000 --proxy-headers --forwarded-allow-ips 127.0.0.1
+Restart=on-failure
+RestartSec=5
+StateDirectory=paperdesk
+PrivateTmp=true
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

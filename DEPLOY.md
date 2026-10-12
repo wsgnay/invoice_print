@@ -2,6 +2,8 @@
 
 推荐把工具部署到 `pdf.wsgnay.cn`，保留 `wsgnay.cn` 当前的根域名解析。应用、OCR 和 PDF 处理运行在服务器内；Caddy 负责 HTTPS 和反向代理。
 
+如果服务器无法连接 Docker 官方镜像仓库，可使用 [Ubuntu 系统服务部署方案](DEPLOY_SYSTEMD.md)，通过 Python 虚拟环境、systemd、Nginx 和 Certbot 运行。
+
 ## 服务器建议
 
 - 区域：无需立即办理 ICP 备案时选香港；主要用户都在中国大陆且希望更低延迟时，购买大陆服务器并先完成 ICP 备案。
