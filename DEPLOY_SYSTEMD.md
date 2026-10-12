@@ -35,6 +35,15 @@ nginx -t && systemctl reload nginx
 
 此时网站仍返回 503，只开放证书签发所需的验证路径。
 
+如果只使用 HTTP，可改用 `deploy/nginx-http-only.conf` 并重新加载 Nginx：
+
+```bash
+install -m 0644 /opt/paperdesk/deploy/nginx-http-only.conf /etc/nginx/sites-available/paperdesk
+nginx -t && systemctl reload nginx
+```
+
+此模式无需证书和 443 端口，但发票文件及接口数据会通过未加密连接传输。HTTP 基础认证也会暴露密码，因此该配置没有设置访问密码；仅适合不上传敏感文件的测试环境。
+
 ## 签发 HTTPS 并开放站点
 
 确认 DNS 生效且公网可以访问 80 端口后执行。把邮箱替换成自己的地址；`htpasswd` 会交互式要求输入访问密码。
