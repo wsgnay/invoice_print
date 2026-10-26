@@ -142,7 +142,7 @@ async def export(files: list[UploadFile] = File(...), spec: str = Form(...)):
                 per_sheet = int(config.get("layout", 2 if mode == "invoice" else 1))
                 if per_sheet not in (1, 2, 4):
                     raise ValueError("不支持此排版。")
-                margin = float(config.get("margin", 12))
+                margin = float(config.get("margin", 24))
                 if margin not in (12, 24, 36):
                     raise ValueError("边距无效。")
                 landscape = config.get("landscape", False)

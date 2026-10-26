@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>wsgnay 工作台 · 文档工具</title><link rel="stylesheet" href="/style.css?v=0.3.3"></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>wsgnay 工作台 · 文档工具</title><link rel="stylesheet" href="/style.css?v=0.3.6"></head>
 <body>
 <aside class="sidebar">
  <a class="brand" href="/"><span class="brand-icon">▱</span><strong>wsgnay<span>WORKSPACE</span></strong></a>
@@ -32,10 +32,10 @@
   </section>
   <aside class="inspector">
    <div class="inspector-head"><h2 id="settings-title">打印设置</h2><span>OUTPUT</span></div>
-   <div id="layout-settings"><label class="field-label">每页排列</label><div class="layouts"><button data-layout="1"><span class="layout-icon one"><i></i></span>一页一张</button><button data-layout="2" class="active"><span class="layout-icon two"><i></i><i></i></span>一页两张</button><button data-layout="4"><span class="layout-icon four"><i></i><i></i><i></i><i></i></span>一页四张</button></div><div class="field-row"><label>纸张尺寸<span>A4 · 210 × 297 mm</span></label></div><div class="field-row"><label for="orientation">纸张方向</label><select id="orientation"><option value="portrait">纵向</option><option value="landscape">横向</option></select></div><div class="field-row"><label for="margin">页边距</label><select id="margin"><option value="12" selected>窄 · 4 mm</option><option value="24">标准 · 8 mm</option><option value="36">宽 · 13 mm</option></select></div></div>
+   <div id="layout-settings"><label class="field-label">每页排列</label><div class="layouts"><button data-layout="1"><span class="layout-icon one"><i></i></span>一页一张</button><button data-layout="2" class="active"><span class="layout-icon two"><i></i><i></i></span>一页两张</button><button data-layout="4"><span class="layout-icon four"><i></i><i></i><i></i><i></i></span>一页四张</button></div><div class="field-row"><label>纸张尺寸<span>A4 · 210 × 297 mm</span></label></div><div class="field-row"><label for="orientation">纸张方向</label><select id="orientation"><option value="portrait">纵向</option><option value="landscape">横向</option></select></div><div class="field-row"><label for="margin">页边距</label><select id="margin"><option value="12">窄 · 4 mm</option><option value="24" selected>标准 · 8 mm</option><option value="36">宽 · 13 mm</option></select></div></div>
    <div id="pdf-settings" hidden><label class="field-label" for="range">提取页码（当前清单顺序）</label><input id="range" placeholder="例如 1-3, 5, 8" autocomplete="off"><p class="muted">留空导出所有勾选页面。填写后仅从勾选页面中筛选；范围可调整输出顺序。</p><label class="check-row"><input id="split" type="checkbox">逐页拆分为独立 PDF（ZIP）</label></div>
    <div id="word-settings" hidden><div class="word-tag">W <span>可编辑文字 · .docx</span></div><p class="muted">文字型 PDF：提取文字并保留分页，不还原复杂表格和原版式。<br><br>扫描页面：作为整页图片放入 Word，图片内文字不可编辑。Word 转换暂不使用 OCR。</p></div>
-   <div id="invoice-total" class="total"><div><span>已填金额小计</span><small id="pending">等待导入</small></div><strong id="total">¥ <b>0.00</b></strong></div>
+   <div id="invoice-total" class="total"><div class="total-heading"><span>已填金额小计</span><small id="pending">等待导入</small></div><strong id="total">¥ <b>0.00</b></strong><div class="amount-uppercase"><span>金额大写</span><output id="amount-uppercase">等待导入发票</output></div></div>
    <div class="export-meta"><span id="selected-count">已选择 0 页</span><span id="output-count">预计 0 张 A4</span></div><button id="export" class="primary export" disabled>↓ 导出打印 PDF</button><p class="export-tip" id="export-tip">等比缩放，保持原始发票比例</p>
   </aside>
  </div>
@@ -43,5 +43,6 @@
 </main></div>
 <div id="toast" role="status" aria-live="polite"></div>
 <dialog id="help-dialog"><h2>使用说明</h2><p>1. 选择左侧工具，拖入或选择文件。</p><p>2. 勾选需要的页面，用 ↑ ↓ 调整顺序。不同工具的文件清单独立保存。</p><p>3. 发票按每页一张自动提取含税总额；图片和扫描件自动使用 OCR 识别。识别失败可点击“重新识别金额”，或通过“校对”修正；重新识别会保留已手动校对的金额。当前按人民币汇总，不进行币种换算。</p><p>4. PDF 工具可合并多个文件、按页码提取或逐页拆分。</p><p>5. 导出 PDF 后，用阅读器以“实际大小”打印。PDF 转 Word 仅提供基础文字提取，扫描页保留为图片。</p><p>单文件不超过 50 MB / 200 页，每次导出合计不超过 150 MB / 200 页。加密 PDF 需先解密。</p><button class="primary" id="close-help">知道了</button></dialog>
-<script src="/app.js?v=0.3.4"></script>
+<script src="/rmb.js?v=0.3.6"></script>
+<script src="/app.js?v=0.3.7"></script>
 </body></html>
